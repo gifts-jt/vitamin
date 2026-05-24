@@ -269,7 +269,7 @@
             <!-- VIDEO -->
             <div class="video-box">
 
-                <video controls autoplay playsinline>
+                <video controls playsinline>
                     <source src="vitamin.mp4" type="video/mp4">
                     Your browser does not support video.
                 </video>
@@ -292,6 +292,18 @@
             document.getElementById("welcome-screen").style.display = "none";
 
             document.getElementById("main-screen").style.display = "block";
+        }
+
+        function goBack() {
+
+            document.getElementById("main-screen").style.display = "none";
+
+            document.getElementById("welcome-screen").style.display = "block";
+
+            // Pause video when going back
+            const video = document.querySelector("video");
+            video.pause();
+            video.currentTime = 0;
         }
 
     </script>
