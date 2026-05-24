@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hello Gourii ❤️</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #ff758c, #ff7eb3, #ffb199);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow-x: hidden;
+            padding: 20px;
+        }
+
+        /* Floating hearts */
+
+        .hearts {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 0;
+        }
+
+        .hearts span {
+            position: absolute;
+            bottom: -50px;
+            color: white;
+            font-size: 20px;
+            animation: float 10s linear infinite;
+            opacity: 0.7;
+        }
+
+        .hearts span:nth-child(1) {
+            left: 10%;
+            animation-duration: 8s;
+        }
+
+        .hearts span:nth-child(2) {
+            left: 25%;
+            animation-duration: 12s;
+        }
+
+        .hearts span:nth-child(3) {
+            left: 40%;
+            animation-duration: 9s;
+        }
+
+        .hearts span:nth-child(4) {
+            left: 60%;
+            animation-duration: 11s;
+        }
+
+        .hearts span:nth-child(5) {
+            left: 75%;
+            animation-duration: 7s;
+        }
+
+        .hearts span:nth-child(6) {
+            left: 90%;
+            animation-duration: 10s;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 0;
+            }
+
+            30% {
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateY(-120vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        /* Main Card */
+
+        .container {
+            width: 100%;
+            max-width: 420px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.18);
+            backdrop-filter: blur(12px);
+            border-radius: 28px;
+            padding: 30px 22px;
+            text-align: center;
+            color: white;
+            box-shadow: 0 10px 35px rgba(0, 0, 0, 0.25);
+            animation: fadeIn 1s ease;
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            margin-bottom: 15px;
+        }
+
+        .subtext {
+            font-size: 1rem;
+            line-height: 1.7;
+            margin-bottom: 25px;
+        }
+
+        button {
+            border: none;
+            background: white;
+            color: #ff4f81;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: 0.3s;
+            width: 100%;
+        }
+
+        button:hover {
+            transform: scale(1.03);
+        }
+
+        .main-screen {
+            display: none;
+        }
+
+        .video-box {
+            margin-top: 20px;
+        }
+
+        video {
+            width: 100%;
+            border-radius: 18px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .message {
+            margin-top: 22px;
+            font-size: 1.05rem;
+            line-height: 2;
+        }
+
+        .big {
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        .emojis {
+            margin-top: 18px;
+            font-size: 1.8rem;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Mobile optimization */
+
+        @media(max-width:480px) {
+
+            body {
+                padding: 15px;
+            }
+
+            .card {
+                padding: 25px 18px;
+                border-radius: 24px;
+            }
+
+            h1 {
+                font-size: 1.9rem;
+            }
+
+            .message {
+                font-size: 0.98rem;
+            }
+
+            button {
+                padding: 14px 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Floating Hearts -->
+    <div class="hearts">
+        <span>❤️</span>
+        <span>💖</span>
+        <span>✨</span>
+        <span>💕</span>
+        <span>🥺</span>
+        <span>🌸</span>
+    </div>
+
+    <div class="container">
+
+        <!-- Welcome Screen -->
+        <div class="card" id="welcome-screen">
+
+            <h1>Hello Gourii ❤️</h1>
+
+            <p class="subtext">
+                Someone wants to remind you <br>
+                how special you are 💌
+            </p>
+
+            <button onclick="showMainScreen()">
+                Visit Website 💖
+            </button>
+
+        </div>
+
+        <!-- Main Screen -->
+        <div class="card main-screen" id="main-screen">
+
+            <h1>Hey Gourii 🌸</h1>
+
+            <div class="message">
+
+                <div class="big">
+                    Where is my vitamin ki goli? 🥺💊❤️
+                </div>
+
+                <br>
+
+                Tum online ho ya offline... <br>
+                tum meri favorite notification ho 💕✨ <br><br>
+
+                I miss youuuu😭💖 <br>
+
+                Jaldi online aao naaa 🥺
+
+            </div>
+
+            <div class="emojis">
+                💖 ✨ 🌸 🥺 💕
+            </div>
+
+            <!-- VIDEO -->
+            <!-- VIDEO -->
+            <div class="video-box">
+
+                <video controls autoplay playsinline>
+                    <source src="vitamin.mp4" type="video/mp4">
+                    Your browser does not support video.
+                </video>
+
+            </div>
+
+            <!-- BACK BUTTON -->
+            <button onclick="goBack()" style="margin-top:20px;">
+                ⬅ Back
+            </button>
+
+        </div>
+
+    </div>
+
+    <script>
+
+        function showMainScreen() {
+
+            document.getElementById("welcome-screen").style.display = "none";
+
+            document.getElementById("main-screen").style.display = "block";
+        }
+
+    </script>
+
+</body>
+
+</html>
