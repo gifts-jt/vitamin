@@ -135,6 +135,12 @@
             width: 100%;
         }
 
+        .back-btn {
+            margin-top: 20px;
+            position: relative;
+            z-index: 9999;
+        }
+
         button:hover {
             transform: scale(1.03);
         }
@@ -151,6 +157,7 @@
             width: 100%;
             border-radius: 18px;
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            margin-bottom: 10px;
         }
 
         .message {
@@ -277,7 +284,7 @@
             </div>
 
             <!-- BACK BUTTON -->
-            <button onclick="goBack()" style="margin-top:20px;">
+            <button class="back-btn" onclick="goBack()">
                 ⬅ Back
             </button>
 
